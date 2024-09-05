@@ -46,6 +46,9 @@ li {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
+.center p {
+  line-height: 1.5;
+}
 .center a {
   /* color: #467995; */
   color: #fff;
