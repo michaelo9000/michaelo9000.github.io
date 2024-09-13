@@ -36,7 +36,9 @@ main {
   -moz-box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
   box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
 }
-h1 {
+h1,
+h2,
+h3 {
   font-family: "New Amsterdam", sans-serif;
   letter-spacing: 2px;
 }
@@ -45,26 +47,14 @@ li {
   font-size: 18px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-}
-.center p {
   line-height: 1.5;
 }
 .center a {
-  /* color: #467995; */
   color: #fff;
   background-color: #000;
   text-decoration: none;
   position: relative;
 }
-/* .center a::after {
-  content: "";
-  width: 100%;
-  height: 0.9px;
-  position: absolute;
-  left: 0;
-  bottom: 3.5px;
-  background-color: #002e46;
-} */
 
 .side {
   display: flex;
@@ -73,7 +63,6 @@ li {
   width: 25%;
   max-width: calc(calc(100% - 400px) / 2);
   padding: 20px;
-  /* background-color: #d4eefd; */
   background-color: #000000;
 }
 .quote {
@@ -89,7 +78,6 @@ li {
   display: block;
   margin-top: 10px;
   font-size: 24px;
-  /* color: #00aeff; */
   text-decoration: none;
 }
 
@@ -103,5 +91,56 @@ li {
   }
   .center p {
     text-align: justify;
+  }
+}
+
+#menu-checkbox {
+  display: none;
+}
+.menu-button {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  background: url("icon-burger.svg") no-repeat center/50% 50%;
+}
+#menu-checkbox:checked ~ .menu-button {
+  background-image: url("icon-close.svg");
+}
+#menu-checkbox:checked ~ .menu-panel {
+  left: 0;
+}
+
+.menu-panel {
+  z-index: 9;
+  background-color: #000;
+  position: fixed;
+  height: 100%;
+  transition-duration: 0.2s;
+  left: -400px;
+  width: 400px;
+  padding: 100px 20px 0px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.menu-panel a {
+  font-size: 2em;
+  font-family: "New Amsterdam", sans-serif;
+  color: white;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-button {
+    width: 50px;
+    height: 50px;
+    background-size: 80% 80%;
+  }
+  .menu-panel {
+    left: -100%;
+    width: 100%;
   }
 }
