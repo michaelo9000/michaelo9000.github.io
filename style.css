@@ -109,16 +109,18 @@ li {
 }
 #menu-checkbox:checked ~ .menu-button {
   background-image: url("icon-close.svg");
+  position: fixed;
 }
 #menu-checkbox:checked ~ .menu-panel {
   left: 0;
 }
 
 .menu-panel {
+  position: fixed;
   z-index: 9;
   background-color: #000;
-  position: fixed;
   height: 100%;
+  overflow-y: auto;
   transition-duration: 0.2s;
   left: -400px;
   width: 400px;
@@ -132,6 +134,9 @@ li {
   color: white;
   margin-bottom: 20px;
 }
+.menu-panel a:hover {
+  color: yellow;
+}
 
 @media only screen and (max-width: 600px) {
   .menu-button {
@@ -143,4 +148,14 @@ li {
     left: -100%;
     width: 100%;
   }
+}
+
+.menu-heading {
+  font-size: 1.5em;
+  font-family: "New Amsterdam", sans-serif;
+  color: white;
+}
+.menu hr {
+  background-color: white;
+  width: 100%;
 }
