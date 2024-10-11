@@ -55,6 +55,11 @@ li {
   text-decoration: none;
   position: relative;
 }
+.font-header {
+  font-family: "New Amsterdam", sans-serif;
+  letter-spacing: 2px;
+  font-size: 22px;
+}
 
 .side {
   display: flex;
